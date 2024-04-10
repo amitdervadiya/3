@@ -2,9 +2,13 @@
 
 fact(a)
 {
-    if (a <= 1)
+    if (a == 1)
     {
         return 1;
+    }
+    else if (a <= 0)
+    {
+        return 0;
     }
     else
     {
@@ -16,5 +20,10 @@ main()
     int a;
     printf("enter value");
     scanf("%d", &a);
-    printf("%d", fact(a));
+    if (fact(a)==0)
+    {
+        printf("invalid");
+    }else{
+        printf("%d", fact(a));
+    }
 }
