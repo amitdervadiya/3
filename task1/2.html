@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 30px;
+            width: 150px;
+            background-color: green;
+            color: white;
+        }
+
+        input {
+            height: 30px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>enter amount</h1>
+        <input type="text" name="" id="amount">
+        <br><br>
+        <button onclick="checkamount()" id="ans">discount</button>
+    </center>
+</body>
+
+</html>
+<script>
+    function checkamount() {
+        let amount = document.getElementById("amount").value
+        if (amount === "") {
+            alert("please enter your bill amount")
+        }
+        else {
+            if (amount <= 50 ) {
+                document.getElementById("ans").innerHTML = "0% discount"
+            }
+            else if (amount > 50 && amount < 100) {
+                document.getElementById("ans").innerHTML = "10% discount"
+            }
+       
+            else {
+                document.getElementById("ans").innerHTML = "20% discount"
+            }
+        }
+
+    }
+</script>

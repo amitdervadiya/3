@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 30px;
+            width: 150px;
+            background-color: green;
+            color: white;
+        }
+
+        input {
+            height: 30px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>enter age</h1>
+        <input type="text" name="" id="age">
+        <br><br>
+        <button onclick="checkAge()" id="ans">price</button>
+    </center>
+</body>
+
+</html>
+<script>
+    function checkAge() {
+        let age = document.getElementById("age").value
+        if (age === "") {
+            alert("please enter your age")
+        }
+        else {
+            if (age <= 12 ) {
+                document.getElementById("ans").innerHTML = "5 rupees"
+            }
+            else if (age > 12 && age <= 18) {
+                document.getElementById("ans").innerHTML = "10 rupees"
+            }
+            else if (age > 18 && age <= 60) {
+                document.getElementById("ans").innerHTML = "20 rupees"
+            }
+            else {
+                document.getElementById("ans").innerHTML = "15 rupees"
+            }
+        }
+
+    }
+</script>
