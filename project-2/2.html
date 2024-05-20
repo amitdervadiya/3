@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            height: 30px;
+            width: 150px;
+        }
+
+        button {
+            height: 30px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+        <input type="text" name="" id="number">
+        <button id="ans" onclick="ans()">ans</button>
+    </center>
+</body>
+
+</html>
+<script>
+    function ans() {
+        var num = document.getElementById("number").value;
+        var sum = 0
+
+
+        let rev = 0, rem=0
+        while (num != 0) {
+            rem = num % 10
+            sum += rem
+            rev = rev * 10 + rem
+            num = Math.floor(num / 10)
+        }
+        document.getElementById("ans").innerHTML = sum
+
+    }
+</script>

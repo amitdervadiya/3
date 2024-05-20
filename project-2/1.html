@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .number {
+            height: 100vh;
+            width: 100%;
+            color: red;
+           
+        }
+    </style>
+</head>
+
+<body><center>
+    <h1>**Repetition Logic**</h1>
+    <div class="number">
+        <h4 id="number"></h4>
+    </div>
+</center>
+</body>
+
+</html>
+<script>
+    var number = "fizz"
+    for (let i = 1; i <= 50; i++) {
+
+        if (i % 3 == 0 && i % 5 == 0) {
+            document.getElementById("number").innerHTML += "fizzBuzz" + "<br>"
+        }
+        else if (i % 3 == 0) {
+            document.getElementById("number").innerHTML += "fizz" + "<br>"
+
+        }
+        else if (i % 5 == 0) {
+            document.getElementById("number").innerHTML += "Buzz" + "<br>"
+        }
+
+        else {
+            document.getElementById("number").innerHTML += i + "<br>"
+        }
+
+    }
+</script>
