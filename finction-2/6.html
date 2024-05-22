@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            height: 30px;
+            width: 150px;
+
+        }
+
+        button {
+            height: 30px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>**"A" in starting or end.**</h1>
+        <input type="text" id="num1" placeholder="name">
+        <br><br>
+        <button id="ans" onclick="get()">ans</button>
+       
+    </center>
+</body>
+
+</html>
+<script>
+    get = () => {
+        let num1 = document.getElementById("num1").value
+
+        sum(num1)
+    }
+    function sum(num1) {
+        let c = num1.length
+        for (let i = 1; i <= num1.length - 1; i++) {
+            if (num1[0] === "a" || num1[0] === "A") {
+                document.getElementById("ans").innerHTML = "there is a in start"
+            }
+            else if (num1[num1.length - 1] === "a" || num1[num1.length - 1] === "A") {
+                document.getElementById("ans").innerHTML = "there is a in last"
+            }
+            else {
+                document.getElementById("ans").innerHTML = "there is not  a "
+            }
+        }
+
+    }
+
+</script>

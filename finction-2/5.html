@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            height: 30px;
+            width: 150px;
+
+        }
+
+        button {
+            height: 30px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>**finds length of a string**</h1>
+        <input type="text" id="num1" placeholder="name">
+   
+       
+        <br><br>
+        <button id="ans" onclick="ans()">ans</button>
+    </center>
+</body>
+
+</html>
+<script>
+    ans=()=>{
+        let num1 = document.getElementById("num1").value
+        sum(num1)
+    }
+    function sum(num1) {
+        let c = num1.length
+        document.getElementById("ans").innerHTML = c
+    }
+
+</script>

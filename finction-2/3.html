@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Concatenation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>**concatenates two strings**</h1>
+    <div class="container">
+        <h1>String Concatenation</h1>
+        <input type="text" id="string1" placeholder="Enter first string">
+        <input type="text" id="string2" placeholder="Enter second string">
+        <button onclick="concatenateStrings()">Concatenate</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function concatenateStrings() {
+            const string1 = document.getElementById('string1').value;
+            const string2 = document.getElementById('string2').value;
+            const result = string1 + string2;
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
