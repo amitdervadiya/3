@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reverse </title>
+    <style>
+        input {
+            height: 30px;
+            width: 150px;
+
+        }
+
+        button {
+            height: 30px;
+            width: 150px;
+            background-color: green;
+            color: white
+        }
+        .center {
+            height: 500px;
+            width: 500px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body><center>
+<div class="center">
+    <h1>**Find if a given Number is palindrome**</h1>
+    <input type="text" name="" id="palindrome">
+    <button onclick="palindrome()">Check</button>
+    <h1 id="ans"></h1>
+
+</div>
+</center>
+</body>
+
+</html>
+<script>
+
+    function palindrome() {
+        let palindrome = document.getElementById("palindrome").value
+        let str = ""
+        let str1 = ""
+
+
+        for (let i = 0; i <= palindrome.length - 1; i++) {
+            str += palindrome[i];
+        }
+        for (let i = palindrome.length - 1; i >= 0; i--) {
+            str1 += palindrome[i];
+        }
+        if (str === str1) {
+
+            alert("this is pailndrome")
+        }
+        else {
+            alert("this is not pailndrome")
+        }
+    }
+</script>

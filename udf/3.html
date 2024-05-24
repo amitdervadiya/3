@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            height: inherit;
+            background-color: red;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        input {
+            height: 30px;
+            width: 100px;
+        }
+
+
+
+        .si {
+            height: 500px;
+            width: 300px;
+            background-color: green;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <section class="main">
+
+            <section class="si">
+                <h4>convertKilometersToMiles(kilometers)</h4>
+
+                <h4>*kilometers</h4>
+                <input type="text" id="kilometers" placeholder="kilometers">
+
+                <br>
+
+                <button onclick="kilometers()" id="ans1">
+                miles
+                </button>
+                <br>
+                <h4>*miles</h4>
+                <input type="text" id="miles" placeholder="miles">
+
+
+                <br>
+
+                <button onclick="miles()" id="ans2">
+                    kilometers
+                </button>
+
+                </form>
+            </section>
+        </section>
+    </center>
+</body>
+
+</html>
+<script>
+   
+    function kilometers() {
+        let a = document.getElementById("kilometers").value
+        let kilometers = (+a * 0.621371)
+        document.getElementById("ans1").innerHTML = kilometers
+    }
+    function miles(){
+        let a = document.getElementById("miles").value
+        let miles = (a*1.609344)
+        document.getElementById("ans2").innerHTML = miles
+    }
+</script>

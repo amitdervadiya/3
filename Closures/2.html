@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        input {
+            height: 30px;
+            width: 150px;
+        }
+
+        button {
+            height: 30px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <input type="text" id="name" placeholder="Enter name">
+        <br><br>
+        <button onclick="name()" id="ans">ans</button>
+
+    </center>
+
+    <script>
+          function calculateSum() {
+            var num1 = document.getElementById("num1").value;
+     
+
+            function closure(num1) {
+                return function sum() {
+                    let total = "hello" + num1 
+                    document.getElementById("ans").innerHTML = total;
+                }
+            }
+
+            var sumFunction = closure(num1);
+            sumFunction();
+        }
+    </script>
+</body>
+
+</html>
