@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let students = [
+        { name: "rahil", roll_no: 60, marks: 95 },
+        { name: "sanjay", roll_no: 80, marks: 75 },
+        { name: "krish", roll_no: 40, marks: 92 },
+        { name: "sweta", roll_no: 70, marks: 95 },
+        { name: "dhruv", roll_no: 20, marks: 65 },
+        { name: "nimesh", roll_no: 30, marks: 79 },
+    ]
+    for (let i = 0; i < students.length; i++) {
+        if (students[i].marks > 90) {
+            console.log(students[i].name)
+        }
+    }
+    var Categorize_Quotes = [
+        { text: "Democracy", author: "John Dewey", category: "story" },
+        { text: "The Home and the School", author: "JWB Douglas", category: "Education" },
+        { text: "A House for Mr. Biswas", author: "V.S. Naipaul", category: "story" },
+        { text: "Truck", author: "Donald Crews", category: "cartoon" },
+        { text: "Deschooling Society", author: "Ivan Illich", category: "Education" },
+    ];
+    var ANS = Categorize_Quotes.filter((el) => {
+        return el.category === "Education"
+    }).map((el) => {
+        return el.text + " ," + el.author
+    })
+    console.log(ANS)
+    var Categorize_Quotes = [
+        { title: "Democracy", author: "John Dewey", category: "story", price: 50, quantityAvailable: 5 },
+        { title: "The Home and the School", author: "JWB Douglas", category: "Education", price: 60, quantityAvailable: 5 },
+        { title: "A House for Mr. Biswas", author: "V.S. Naipaul", category: "story", price: 70, quantityAvailable: 5 },
+        { title: "Truck", author: "Donald Crews", category: "cartoon", price: 40, quantityAvailable: 5 },
+        { title: "Deschooling Society", author: "Ivan Illich", category: "Education", price: 62, quantityAvailable: 5 },
+
+    ];
+    var ans = Categorize_Quotes.filter((el) => {
+        return el.price > 60
+    }).map((el) => {
+        return el
+    })
+    console.log(ans)
+</script>
