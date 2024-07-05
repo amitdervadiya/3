@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    class vehicle {
+        constructor(name,price,model) {
+            this.name = name;
+            this.price = price;
+            this.model = model;
+        }
+        automobile() {
+            console.log(this.name);
+
+        }
+    }
+    class ev_scooter extends vehicle {
+        ev_scooter() {
+            console.log("ola "+ this.model);
+            console.log("price "+ this.price);
+
+
+        }
+    }
+    class eather extends vehicle {
+        eather() {
+            console.log("eather");
+            console.log("price "+this.price );
+
+        }
+    }
+
+    let obj = new ev_scooter("electricVehicle", 110200,"s1 pro")
+obj.automobile();
+obj.ev_scooter();
+   
+    let obj1 = new eather("electricVehicle",100000)
+    obj1.automobile();
+    obj1.eather();
+
+
+
+</script>

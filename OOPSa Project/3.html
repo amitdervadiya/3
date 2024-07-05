@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    class animal {
+        constructor(name) {
+            this.name = name;
+
+        }
+
+    }
+    class dog extends animal {
+        voice() {
+            console.log(this.name + " bhaw bhawwwww");
+        }
+        eat() {
+            console.log(this.name + " is eating");
+        }
+        sleep() {
+            console.log(this.name + " is sleeping");
+        }
+    }
+    class cat extends animal {
+        voice() {
+            console.log(this.name + "Meow Meowwwww");
+        }
+        sleep() {
+            console.log(this.name + " is sleeping");
+        }
+        eat() {
+            console.log(this.name + " is eating");
+        }
+
+    }
+    let dog1 = new dog("dog");
+    dog1.voice();
+    dog1.eat();
+    dog1.sleep();
+    
+    let cat1 = new cat("cat ");
+    cat1.voice();
+    cat1.eat();
+    cat1.sleep();
+   
+
+
+
+</script>
