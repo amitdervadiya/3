@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img {
+            height: 900px;
+            width: 900px;
+            background: url("https://www.imgcorporations.com/images/bg-img.jpg");
+            background-size: cover cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: blobbing 2s ease-in-out infinite;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        @keyframes blobbing {
+            0% {
+                border-radius: 58% 53% 24% 75% / 61% 76% 24% 47%;
+            }
+
+            50% {
+                border-radius: 79% 21% 44% 56% / 37% 23% 77% 63%;
+            }
+
+            100% {
+                border-radius: 58% 53% 24% 75% / 61% 76% 24% 47%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <img src="" alt="">
+    </div>
+</body>
+
+</html>
+<script>
+    var slider = ["https://cdn.pixabay.com/photo/2024/07/05/03/55/bird-8873766_960_720.jpg", "https://cdn.pixabay.com/photo/2024/07/05/05/19/marina-8873906_960_720.jpg","https://cdn.pixabay.com/photo/2024/07/05/05/19/marina-8873905_960_720.jpg"]
+    var i = 0;
+    function slide(i) {
+        document.querySelector(".img").style.background = "url("+slider[i]+")";
+        document.querySelector(".img").style.backgroundSize = "100% 100%";
+    }
+    function show() {
+        setInterval(() => {
+            if (i == slider.length) {
+                i = 0
+            }
+            slide(i)
+            i++;
+        }, 2000)
+    }
+    show()
+</script>
