@@ -81,6 +81,7 @@
             max-width: 100px;
             height: auto;
             margin-top: 10px;
+            display: none;
         }
     </style>
 </head>
@@ -95,7 +96,9 @@
         <span id="temp"></span>
         <span id="region"></span>
         <h3 id="condition"></h3>
-        <!-- <img src="" alt="Weather Icon" id="img"> -->
+        <center>
+        <img src="" alt="Weather Icon" id="img">
+    </center>
     </div>
 
     <script>
@@ -117,8 +120,9 @@
                         }
                         document.getElementById("condition").innerText = data.current.condition.text;
                         document.getElementById("region").innerText = data.location.region;
-                        // const iconUrl = data.current.condition.icon;
-                        // document.getElementById("img").src = iconUrl;
+                        const iconUrl = data.current.condition.icon;
+                        document.getElementById("img").src = iconUrl;
+                        document.getElementById("img").style.display = "block";
                         localStorage.setItem("weather", JSON.stringify(data));
                     })
                     .catch((err) => {
@@ -127,7 +131,7 @@
                         document.getElementById("temp").innerText = '';
                         document.getElementById("condition").innerText = '';
                         document.getElementById("region").innerText = '';
-                        // document.getElementById("img").src = '';
+                        document.getElementById("img").src = '';
                     });
             } else {
                 alert('Please enter a city name');
