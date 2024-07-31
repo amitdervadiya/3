@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            height: 30px;
+            width: 200px;
+            padding: 0 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            height: 34px;
+            width: 100px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .show {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        #temp {
+            color: #ff5722;
+            font-size: 2em;
+            display: block;
+            margin: 10px 0;
+        }
+
+        #region {
+            color: #2196F3;
+            font-size: 1.5em;
+            display: block;
+            margin: 10px 0;
+        }
+
+        #condition {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 100px;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" placeholder="Enter city name" id="cityname">
+        <button id="search">Search</button>
+    </div>
+    <div class="show">
+        <h1 id="city_name"></h1>
+        <span id="temp"></span>
+        <span id="region"></span>
+        <h3 id="condition"></h3>
+        <!-- <img src="" alt="Weather Icon" id="img"> -->
+    </div>
+
+    <script>
+        document.getElementById("search").addEventListener("click", function () {
+            var city = document.getElementById("cityname").value;
+            if (city) {
+                fetch(`http://api.weatherapi.com/v1/current.json?key=8d8763f487cb44b489e90914243007&q=${city}&aqi=no`)
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        document.getElementById("city_name").innerText = data.location.name;
+                        document.getElementById("temp").innerText = data.current.temp_c + ' °C';
+                        var cc =  data.current.temp_c
+                        if(cc < 30){
+                            document.getElementById("temp").style.color = "blue"
+                        }
+                        else{
+                            document.getElementById("temp").style.color = "red"
+                        }
+                        document.getElementById("condition").innerText = data.current.condition.text;
+                        document.getElementById("region").innerText = data.location.region;
+                        // const iconUrl = data.current.condition.icon;
+                        // document.getElementById("img").src = iconUrl;
+                        localStorage.setItem("weather", JSON.stringify(data));
+                    })
+                    .catch((err) => {
+                        console.error('Error fetching weather data:', err);
+                        document.getElementById("city_name").innerText = 'Error';
+                        document.getElementById("temp").innerText = '';
+                        document.getElementById("condition").innerText = '';
+                        document.getElementById("region").innerText = '';
+                        // document.getElementById("img").src = '';
+                    });
+            } else {
+                alert('Please enter a city name');
+            }
+        });
+    </script>
+</body>
+
+</html>
